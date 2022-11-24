@@ -6,8 +6,8 @@ import os
 load_dotenv()
 
 access_token = os.getenv("ACCESS_TOKEN")
-url = "https://i4vvd0ialb.execute-api.us-east-1.amazonaws.com/Prod/hello"
-urlFakeData = "https://61004cc6bca46600171cf84a.mockapi.io/api-crud/v1/fakeData"
+url = os.getenv("URL_HELLO")
+urlFakeData = os.getenv("URL_FAKE_DATA")
 
 headers = {
     'Content-Type': 'application/json',
