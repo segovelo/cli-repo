@@ -2,10 +2,12 @@ import json
 import requests
 from requests.auth import HTTPBasicAuth
 from dotenv import load_dotenv
-import os
+import os, sys
+import git
 
 load_dotenv()
 
+repo_name = sys.argv[1]
 access_token = os.getenv("ACCESS_TOKEN")
 username = os.getenv("USER_NAME")
 url = os.getenv("URL_HELLO")
@@ -28,8 +30,14 @@ print("Status Code: ", response.status_code)
 print("Response Json : ", response.json)
 """
 
-parent_dir = os.getcwd()
+current_dir = os.getcwd()
+# parent directory
+parent_dir = os.path.dirname(current_dir)
 
+git.Git(current_dir).clone("https://github.com/{}/{}.git".format(username, repo_name))
+
+os.chdir(os.path.join(parent_dir, repo_name))
+print(os.getcwd())
 data1 = {
     "firstName": "Edinson",
     "lastName": "Cavani",
