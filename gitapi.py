@@ -68,6 +68,15 @@ origin = repo.remote(name="origin")
 origin.push()
 
 
+"""
+  File "C:\Users\sebas\Year_3\Python-Projects\py310\github-python\gitapi.py", line 64, in <module>
+    repo = git.Repo("test-repo")
+  File "C:\Users\sebas\Year_3\Python-Projects\py310\lib\site-packages\git\repo\base.py", line 194, in __init__
+    raise NoSuchPathError(epath)
+git.exc.NoSuchPathError: C:\Users\sebas\Year_3\Python-Projects\py310\test-repo\test-repo
+
+"""
+
 data1 = {
     "firstName": "Edinson",
     "lastName": "Cavani",
